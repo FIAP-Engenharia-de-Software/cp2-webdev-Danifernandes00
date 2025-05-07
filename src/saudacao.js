@@ -9,10 +9,18 @@
 // A função tem erros e comportamentos inesperados. Encontre e corrija os problemas usando **short-circuit evaluation** (avaliação de curto-circuito com `&&` ou `||`) e **nullish coalescing (`??`)**.
 
 function saudacao(nome, isLogged) {
-  nome = nome || "Visitante";
-  return isLogged || "Olá, " + nome + "!";
+  if(nome == null || nome == undefined){
+   nome = null || nome == undefined
+  isLogged = isLogged 
+  return('Olá, Visitante')
+  }
+if (nome = nome || isLogged == true){
+  return(`Olá, ${nome}`)
 }
-
+if (nome = nome || isLogged == false){
+  return('undefined')
+}
+}
 // Testando a função
 console.log(saudacao(null, true)); // Esperado: "Olá, Visitante!"
 console.log(saudacao(undefined, true)); // Esperado: "Olá, Visitante!"
